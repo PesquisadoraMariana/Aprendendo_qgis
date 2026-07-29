@@ -1,0 +1,52 @@
+29-07-2026
+Trabalhar com sensoriamento remoto.
+O ser humano vê só o aspectro de luz visível.
+Determinados sensores de satélites conseguem enxergar “IV”.
+Talvez até através das nuvens.
+Tratar as imagens: estão em bandas.
+Espectrocospia:  confere o carater científico do sensoriamento remoto.
+'A espectroscopia é o estudo da interação entre a radiação eletromagnética (luz) e a matéria"
+
+Espectro eletromagnético
+A vegetação saudável reflete o verde (visible) - banda 4
+Pico no verde (faixa visível)
+
+Quando trabalhamos com o infravermelho próximo (near infrared) - banda 8 ou 8A
+
+
+A vegetação queimada reflete mais
+Forma um contraste de cores.
+podemos máximizar o contraste - banda 12.
+
+
+banda 4- R - vermelho
+banda 3- G -verde
+banda 2- B -azul
+
+https://browser.dataspace.copernicus.eu/
+baixar imagens:
+search> sentinela 2> msi> 10% de nuvens> L2A (imagem pronto para uso)> from:> Until:
+20250928 (data da imagem) > baixar
+
+Descompactar> granule> L2A_T22MGT_A044723_20250928T133145> IMG_DATA> R10m> T22MGT_20250928T133149_B04_10m.jp2 (banda 4)
+
+https://www.indexdatabase.de/> Show Indices for selected Sensor> sentinel-2a
+
+realizar o índice.
+
+Quanto mais próximo de 1= mais saudável.
+
+ESTUDO: MAPEAMENTO DE AREAS ALAGADAS COM ÍNDICES.
+
+LF Tools: plugins no qgis
+
+Processamento> caixas de ferramentas> Baixar MDS> ANADEM - South America
+
+BAIXA O MDS E MDT
+
+Profile tool> plugin
+
+Clicar no canto inferior direito para colocar: sirgas 2000.
+
+usar só o MDT>raster>projeções>reprojetar coordenadas> src: sirgas 2000> método de reamostragem a ser utilizado>  bilinear>valor sem dados: -9999>sombreamento
+
