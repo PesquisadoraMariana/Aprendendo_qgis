@@ -14,4 +14,9 @@ mapa feito!
 
 Próxima etapa: adicionar gráfico de nível topográfico.
 
+qgis>processamento>mde>baixar mde.
 
+extensão>usar a extensão atual da tela do mapa> anadem (já possui os ajustes da américa do sul)
+
+O anadem é um modelo digital de terreno (MDT).
+E baixar o Copernicus DEM GLO-30 - Global - 1 arc sec (MDS).
