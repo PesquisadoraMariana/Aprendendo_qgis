@@ -1,0 +1,59 @@
+from osgeo import gdal
+import numpy as np
+import os
+
+# ====================== PASTAS ======================
+pasta_2019 = r"C:\2. BDG_30-07-2026-mapa_de_espectroscopia\0. raster\S2B_MSIL2A_20190910T133229_N0500_R081_T22MHT_20230703T193625.SAFE\S2B_MSIL2A_20190910T133229_N0500_R081_T22MHT_20230703T193625.SAFE\GRANULE\L2A_T22MHT_A013120_20190910T133239\IMG_DATA\R10m"
+pasta_2026 = r"C:\2. BDG_30-07-2026-mapa_de_espectroscopia\0. raster\S2C_MSIL2A_20260720T133151_N0512_R081_T22MHT_20260720T182309.SAFE\S2C_MSIL2A_20260720T133151_N0512_R081_T22MHT_20260720T182309.SAFE\GRANULE\L2A_T22MHT_A009775_20260720T133146\IMG_DATA\R10m"
+
+# ====================== BANDA 4 e 8 ======================
+b04_2019 = os.path.join(pasta_2019, "T22MHT_20190910T133229_B04_10m.jp2")
+b08_2019 = os.path.join(pasta_2019, "T22MHT_20190910T133229_B08_10m.jp2")
+b04_2026 = os.path.join(pasta_2026, "T22MHT_20260720T133151_B04_10m.jp2")
+b08_2026 = os.path.join(pasta_2026, "T22MHT_20260720T133151_B08_10m.jp2")
+
+def ler_banda(caminho):
+    ds = gdal.Open(caminho)
+    return ds.GetRasterBand(1).ReadAsArray().astype(np.float32)
+
+red_2019 = ler_banda(b04_2019)
+nir_2019 = ler_banda(b08_2019)
+red_2026 = ler_banda(b04_2026)
+nir_2026 = ler_banda(b08_2026)
+
+# ====================== CALCULAR NDVI ======================
+np.seterr(divide='ignore', invalid='ignore')
+
+ndvi_2019 = (nir_2019 - red_2019) / (nir_2019 + red_2019)
+ndvi_2026 = (nir_2026 - red_2026) / (nir_2026 + red_2026)
+
+# ====================== SALVAR OS NDVI ======================
+# Usamos a banda B04 como referência de projeção e geotransform
+ref = gdal.Open(b04_2019)
+driver = gdal.GetDriverByName("GTiff")
+
+# Pasta de saída (pode mudar se quiser)
+pasta_saida = r"C:\2. BDG_30-07-2026-mapa_de_espectroscopia\0. raster"
+
+# Salvar NDVI 2019
+out_2019 = os.path.join(pasta_saida, "NDVI_2019.tif")
+ds_out = driver.Create(out_2019, ref.RasterXSize, ref.RasterYSize, 1, gdal.GDT_Float32)
+ds_out.SetGeoTransform(ref.GetGeoTransform())
+ds_out.SetProjection(ref.GetProjection())
+ds_out.GetRasterBand(1).WriteArray(ndvi_2019)
+ds_out.GetRasterBand(1).SetNoDataValue(-9999)
+ds_out = None
+
+# Salvar NDVI 2026
+out_2026 = os.path.join(pasta_saida, "NDVI_2026.tif")
+ds_out = driver.Create(out_2026, ref.RasterXSize, ref.RasterYSize, 1, gdal.GDT_Float32)
+ds_out.SetGeoTransform(ref.GetGeoTransform())
+ds_out.SetProjection(ref.GetProjection())
+ds_out.GetRasterBand(1).WriteArray(ndvi_2026)
+ds_out.GetRasterBand(1).SetNoDataValue(-9999)
+ds_out = None
+
+print("✅ NDVI salvos com sucesso!")
+print("Arquivos criados:")
+print(out_2019)
+print(out_2026)

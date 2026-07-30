@@ -1,0 +1,37 @@
+from osgeo import gdal
+import numpy as np
+import os
+
+# ====================== CAMINHOS DOS NDVI ======================
+pasta = r"C:\2. BDG_30-07-2026-mapa_de_espectroscopia\0. raster"
+
+ndvi_2019_path = os.path.join(pasta, "NDVI_2019.tif")
+ndvi_2026_path = os.path.join(pasta, "NDVI_2026.tif")
+
+# ====================== LER OS NDVI ======================
+def ler_raster(caminho):
+    ds = gdal.Open(caminho)
+    return ds.GetRasterBand(1).ReadAsArray().astype(np.float32), ds
+
+ndvi_2019, ref = ler_raster(ndvi_2019_path)
+ndvi_2026, _   = ler_raster(ndvi_2026_path)
+
+# ====================== CALCULAR A DIFERENÇA ======================
+diferenca = ndvi_2026 - ndvi_2019
+
+print("✅ Diferença calculada!")
+print("Diferença → min:", round(np.nanmin(diferenca), 3), "| max:", round(np.nanmax(diferenca), 3))
+
+# ====================== SALVAR O RESULTADO ======================
+saida = os.path.join(pasta, "Diferenca_NDVI_2026_menos_2019.tif")
+
+driver = gdal.GetDriverByName("GTiff")
+ds_out = driver.Create(saida, ref.RasterXSize, ref.RasterYSize, 1, gdal.GDT_Float32)
+ds_out.SetGeoTransform(ref.GetGeoTransform())
+ds_out.SetProjection(ref.GetProjection())
+ds_out.GetRasterBand(1).WriteArray(diferenca)
+ds_out.GetRasterBand(1).SetNoDataValue(-9999)
+ds_out = None
+
+print("✅ Arquivo salvo com sucesso:")
+print(saida)

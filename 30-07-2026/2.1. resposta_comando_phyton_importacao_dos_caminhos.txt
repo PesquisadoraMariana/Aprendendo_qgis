@@ -1,0 +1,34 @@
+from osgeo import gdal
+import numpy as np
+import os
+
+# ====================== PASTAS ======================
+pasta_2019 = r"C:\2. BDG_30-07-2026-mapa_de_espectroscopia\0. raster\S2B_MSIL2A_20190910T133229_N0500_R081_T22MHT_20230703T193625.SAFE\S2B_MSIL2A_20190910T133229_N0500_R081_T22MHT_20230703T193625.SAFE\GRANULE\L2A_T22MHT_A013120_20190910T133239\IMG_DATA\R10m"
+
+pasta_2026 = r"C:\2. BDG_30-07-2026-mapa_de_espectroscopia\0. raster\S2C_MSIL2A_20260720T133151_N0512_R081_T22MHT_20260720T182309.SAFE\S2C_MSIL2A_20260720T133151_N0512_R081_T22MHT_20260720T182309.SAFE\GRANULE\L2A_T22MHT_A009775_20260720T133146\IMG_DATA\R10m"
+
+# ====================== BANDA 4 e 8 - 2019 ======================
+b04_2019 = os.path.join(pasta_2019, "T22MHT_20190910T133229_B04_10m.jp2")
+b08_2019 = os.path.join(pasta_2019, "T22MHT_20190910T133229_B08_10m.jp2")
+
+# ====================== BANDA 4 e 8 - 2026 ======================
+b04_2026 = os.path.join(pasta_2026, "T22MHT_20260720T133151_B04_10m.jp2")
+b08_2026 = os.path.join(pasta_2026, "T22MHT_20260720T133151_B08_10m.jp2")
+
+# ====================== ABRIR AS BANDAS ======================
+def ler_banda(caminho):
+    ds = gdal.Open(caminho)
+    banda = ds.GetRasterBand(1).ReadAsArray().astype(np.float32)
+    return banda
+
+red_2019 = ler_banda(b04_2019)
+nir_2019 = ler_banda(b08_2019)
+
+red_2026 = ler_banda(b04_2026)
+nir_2026 = ler_banda(b08_2026)
+
+print("✅ Bandas carregadas com sucesso!")
+print("Formato 2019 Red:", red_2019.shape)
+print("Formato 2019 NIR:", nir_2019.shape)
+print("Formato 2026 Red:", red_2026.shape)
+print("Formato 2026 NIR:", nir_2026.shape)

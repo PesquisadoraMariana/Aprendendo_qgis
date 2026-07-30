@@ -1,0 +1,17 @@
+30-07-2026
+https://browser.dataspace.copernicus.eu/
+baixar imagens:
+search> sentinela 2> msi> 10% de nuvens> L2A (imagem pronto para uso)> from:> Until:
+
+https://www.indexdatabase.de/> Show Indices for selected Sensor> sentinel-2a
+
+Índice de Vegetação por Diferença Normalizada NIR/Vermelho, NDVI Calibrado - CDVI	
+NDVI= (NEUR−RED)/(NEUR+RED)
+
+Banda 4(red) e banda 8 (neur)
+
+mapa feito!
+
+Próxima etapa: adicionar gráfico de nível topográfico.
+
+

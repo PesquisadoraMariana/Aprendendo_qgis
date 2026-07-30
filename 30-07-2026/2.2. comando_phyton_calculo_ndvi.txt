@@ -1,0 +1,12 @@
+import numpy as np
+
+# Evita avisos de divisão por zero
+np.seterr(divide='ignore', invalid='ignore')
+
+# Calcular NDVI
+ndvi_2019 = (nir_2019 - red_2019) / (nir_2019 + red_2019)
+ndvi_2026 = (nir_2026 - red_2026) / (nir_2026 + red_2026)
+
+print("✅ NDVI calculado!")
+print("NDVI 2019 → min:", round(np.nanmin(ndvi_2019), 3), "| max:", round(np.nanmax(ndvi_2019), 3))
+print("NDVI 2026 → min:", round(np.nanmin(ndvi_2026), 3), "| max:", round(np.nanmax(ndvi_2026), 3))
