@@ -8,6 +8,9 @@ Primeiro mapa do conjunto de documentos elaborado com o objetivo de documentar e
 Ressalta-se que, em setembro de 2026, completará um ano desde que eu e meu esposo realizamos uma denúncia ambiental similar (Mais de 3.000 pneus sobre a nascente Canindé e leucenas invadindo a Área de Preservação Permanente.)
 
 O presente material visa subsidiar a análise técnica e o eventual acompanhamento das ações (ou da ausência delas) por parte da gestão municipal e dos órgãos ambientais competentes.
+#### informações necessárias para a análise do Mapa:
+1) comprovação que há um processo de assoreamento deste 2018 , que foi quando realizei meu trabalho de conclusão de curso, o artigo pode ser visto na integra: [Artigo - Assoreamento Córrego Baixa Funda](https://github.com/PesquisadoraMariana/Aprendendo_qgis/tree/main/Artigo_comprova_processso_assoreamento_corrego_Baixa_Funda_2018){:target="_blank"}
+
 
 
 
