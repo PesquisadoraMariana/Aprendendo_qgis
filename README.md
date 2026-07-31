@@ -8,8 +8,21 @@ Primeiro mapa do conjunto de documentos elaborado com o objetivo de documentar e
 Ressalta-se que, em setembro de 2026, completará um ano desde que eu e meu esposo realizamos uma denúncia ambiental similar (Mais de 3.000 pneus sobre a nascente Canindé e leucenas invadindo a Área de Preservação Permanente.)
 
 O presente material visa subsidiar a análise técnica e o eventual acompanhamento das ações (ou da ausência delas) por parte da gestão municipal e dos órgãos ambientais competentes.
-#### informações necessárias para a análise do Mapa:
-1) comprovação que há um processo de assoreamento avançado na área em estudo: [Artigo - Assoreamento Córrego Baixa Funda](https://github.com/PesquisadoraMariana/Aprendendo_qgis/tree/main/Artigo_comprova_processso_assoreamento_corrego_Baixa_Funda_2018)
+#### Informações necessárias para a análise do Mapa:
+1) Comprovação que há um processo de assoreamento avançado na área em estudo: [Artigo](https://github.com/PesquisadoraMariana/Aprendendo_qgis/blob/main/REFER%C3%8ANCIAS/ARTIGO_ocorrencia-de-assoreamento-as-margens-do-corrego-baixa-funda.pdf)
+2) Possível especulação imobiliária, evidenciada pelos grandes empreendimentos inaugurados na região e suas respectivas datas: Shopping Lago Center (outubro/2024), Centro de Canoagem (setembro/2025), Centro de Convenções (março/2026), Supermercados Campelo (dezembro/2018), Prainha (2025, com ressalvas), Riviera Home Resort (maio/2024), Complexo Poliesportivo (dezembro/2025) e Arena Bravo (maio/2023).
+3) Os bairros diretamente impactados pelo assoreamento acelerado do Córrego Baixa Funda são: Vila Nova, Parque Primavera, Setor Tiúba, Vila Bragantina, Eldorado, Setor Palmas, Setor Itaipú, Residencial Camargo e Santa Luzia.
+4) Sobre a Via Lago, elaborei um parágrafo bem detalhado na minha dissertação de mestrado no tópico: 4	RESULTADOS E DISCUSSÕES> 4.2	Observação não participante dos equipamentos comunitários e espaços públicos urbanos> 4.2.10	Araguaína, sugiro que leia na integra: [Dissertação](https://github.com/PesquisadoraMariana/Aprendendo_qgis/blob/main/REFER%C3%8ANCIAS/ARTIGO_ocorrencia-de-assoreamento-as-margens-do-corrego-baixa-funda.pdf)
+
+
+
+
+
+
+
+
+
+
 
 
 
