@@ -9,7 +9,7 @@ Ressalta-se que, em setembro de 2026, completará um ano desde que eu e meu espo
 
 O presente material visa subsidiar a análise técnica e o eventual acompanhamento das ações (ou da ausência delas) por parte da gestão municipal e dos órgãos ambientais competentes.
 #### informações necessárias para a análise do Mapa:
-1) comprovação que há um processo de assoreamento deste 2018 , que foi quando realizei meu trabalho de conclusão de curso, o artigo pode ser visto na integra: [Artigo - Assoreamento Córrego Baixa Funda](https://github.com/PesquisadoraMariana/Aprendendo_qgis/tree/main/Artigo_comprova_processso_assoreamento_corrego_Baixa_Funda_2018)
+1) comprovação que há um processo de assoreamento avançado na área em estudo: [Artigo - Assoreamento Córrego Baixa Funda](https://github.com/PesquisadoraMariana/Aprendendo_qgis/tree/main/Artigo_comprova_processso_assoreamento_corrego_Baixa_Funda_2018)
 
 
 
