@@ -1,6 +1,7 @@
 # Aqui você verá:
 ## Anotações de aulas
 ## Mapas finalizados
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ### Área de localização do Córrego Baixa Funda no município de Araguaína-TO
 
 Primeiro mapa do conjunto de documentos elaborado com o objetivo de documentar e tornar pública a situação de assoreamento do Córrego Baixa Funda, em Araguaína-TO.
